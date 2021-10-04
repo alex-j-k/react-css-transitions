@@ -18,6 +18,22 @@ const handleClick = () =>{
 };
 
 
+const whatIWantToRender = [...Array(slideNumber)].map(eachone => {return (
+  <CSSTransition
+  key={Math.random()}
+  timeout={5000}
+  classNames="item"
+>
+                <SlidingIn></SlidingIn>
+ </CSSTransition> 
+
+)})
+
+
+
+
+
+
   return (
     <div className="App">
       <Navbar></Navbar>
@@ -27,16 +43,7 @@ const handleClick = () =>{
     <TransitionGroup className='tg'>
         
 
-                {  [...Array(slideNumber)].map(eachone => {return (
-                        <CSSTransition
-                        key={Math.random()}
-                        timeout={5000}
-                        classNames="item"
-                      >
-                                      <SlidingIn></SlidingIn>
-                       </CSSTransition> 
-      
-      )})}
+                {whatIWantToRender}
 
       </TransitionGroup>
 
